@@ -9,12 +9,13 @@ export default function Home({}) {
         <div className="col-span-1">
           <ServerGroup isVip={true} count={2} />
           <ServerGroup count={4} />
+          <ServerGroup count={15} />
         </div>
         <div className="col-span-1">
-          <ServerGroup isVip={true} />
+          <ServerGroup isVip={true} count={3} />
           <ServerGroup count={15} />
-          <ServerGroup />
-          <ServerGroup />
+          <ServerGroup count={15}/>
+          <ServerGroup count={15}/>
         </div>
       </div>
     </Layout>
