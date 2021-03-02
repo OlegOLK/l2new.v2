@@ -1,7 +1,8 @@
 import { ServerGroup } from '../components/server.group'
 import { Layout } from '../components/layout';
+import { GetServerSideProps } from 'next'
 
-export default function Home() {
+export default function Home({}) {
   return (
     <Layout>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-16 gap-x-8">
@@ -18,4 +19,9 @@ export default function Home() {
       </div>
     </Layout>
   )
+}
+
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  return { props: {} };
 }

@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { ServerRow } from './server.row'
 
 
-export function ServerGroup({ isVip, count }) {
+export function ServerGroup({ isVip = false, count = 1 }) {
 
     return (
 
@@ -21,7 +21,7 @@ export function ServerGroup({ isVip, count }) {
                 <p className="text-2xl font-medium my-2" style={{ display: 'inline-block' }}>СКОРО ОТКРОЮТСЯ ПРЕМИУМ СЕРВЕРА</p>
                 <div className="w-full divide-y mb-4">
                     {
-                        new Array(count).fill(1).map((x,i) => {
+                        new Array(count).fill(1).map((x, i) => {
                             return (
                                 <ServerRow key={`${x}.${i}`} isVip={isVip} />
                             )
