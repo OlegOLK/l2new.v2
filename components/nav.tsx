@@ -5,6 +5,7 @@ import { FunctionComponent } from 'react';
 // import { userFromSaga } from '../RegisterDialog/saga';
 // import { Link } from 'react-router-dom';
 // import { useHistory } from 'react-router-dom';
+import Link from 'next/link'
 import { makeStyles } from '@material-ui/core/styles';
 import {
     AppBar,
@@ -48,7 +49,7 @@ import TrendingUpIcon from '@material-ui/icons/TrendingUp';
 // import { ChroniclesFilterComponent } from 'app/components/Filter/chronicles.fiter';
 import clsx from 'clsx';
 
-function t(name: string){
+function t(name: string) {
     return name.substring(name.indexOf("."));
 }
 
@@ -215,53 +216,14 @@ export const NavBar: FunctionComponent<CardProps> = () => {
                         className={classes.root}
                     >
                         <Grid item>
-                            <Button
-                                className={classes.button}
-                                // color="primary"
-                                // component={Link}
-                                onClick={e => navigateTo(e, '/')}
-                            // startIcon={<HomeIcon color="inherit" />}
-                            >
-                                <img
-                                    src="/logo192.png"
-                                    alt="l2new logo"
-                                    height="40px"
-                                    width="40px"
-                                />{' '}
-                &nbsp;
-                {t('nav.home')}
-                            </Button>
+                            <Link href="/">
+                                <a>Home</a>
+                            </Link>
                         </Grid>
                         <Grid item>
-                            {/* {isAuthenticaed ? (
-                <Button
-                  // color="primary"
-                  // component={Link}
-                  // to={'/addserver'}
-                  className={classes.button}
-                  onClick={e => navigateTo(e, '/addserver')}
-                  // startIcon={<AddToQueueIcon color="inherit" />}
-                >
-                  {t('nav.addserver')}
-                </Button>
-              ) : (
-                <Button
-                  onClick={openDialog}
-                  className={classes.button}
-                >
-                  {t('nav.addserver')}
-                </Button>
-              )} */}
-                            <Button
-                                aria-controls="simple-menu"
-                                aria-haspopup="true"
-                                // color="primary"
-                                className={classes.button}
-                                // startIcon={<TrendingUpIcon color="inherit" />}
-                                onClick={e => navigateTo(e, '/advertisement')}
-                            >
-                                {t('nav.advert')}
-                            </Button>
+                            <Link href="/advertisement">
+                                <a>Advertisement</a>
+                            </Link>
                             <Button
                                 aria-controls="simple-menu"
                                 aria-haspopup="true"
@@ -484,8 +446,8 @@ export const NavBar: FunctionComponent<CardProps> = () => {
                                 </ListItemIcon>
                                 <ListItemText
                                     color="primary"
-                                    
-                                    //primary={i18n.language === 'ru' ? 'Русский' : 'English'}
+
+                                //primary={i18n.language === 'ru' ? 'Русский' : 'English'}
                                 />
                                 {open ? <ExpandLess /> : <ExpandMore />}
                             </ListItem>

@@ -24,7 +24,6 @@ export function Header() {
     const classes = useStyles();
     return (
         <header className={clsx([classes.header, ' bg-gradient-to-r from-green-400 to-blue-500'])}>
-            {/* <img src="/assets/banner.jpg" alt="banner" height="auto" width="100%" /> */}
         </header>
     );
 }
